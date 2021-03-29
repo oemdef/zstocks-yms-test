@@ -3,23 +3,64 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751B09BF26113F43009C40B2 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09BE26113F43009C40B2 /* SearchResultsView.swift */; };
+		751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 751B09C12611DD3E009C40B2 /* SwiftUICharts */; };
+		751B09C42611DE8B009C40B2 /* CardViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */; };
+		751B09C62611E159009C40B2 /* testGraphData.json in Resources */ = {isa = PBXBuildFile; fileRef = 751B09C52611E159009C40B2 /* testGraphData.json */; };
+		751B09CA2611EDCA009C40B2 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C92611EDCA009C40B2 /* CustomScrollView.swift */; };
+		751B09CC261202C4009C40B2 /* CustomLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */; };
+		751B09CE26120B91009C40B2 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09CD26120B91009C40B2 /* NetworkMonitor.swift */; };
+		7540C37E25E2A4E3006DC20A /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7540C37C25E2A4E3006DC20A /* Montserrat-SemiBold.ttf */; };
+		7540C37F25E2A4E3006DC20A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7540C37D25E2A4E3006DC20A /* Montserrat-Bold.ttf */; };
+		7540C38125E2AE60006DC20A /* SnippetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540C38025E2AE60006DC20A /* SnippetView.swift */; };
 		7541C0CE25E1440200DA55C4 /* zStocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541C0CD25E1440200DA55C4 /* zStocksApp.swift */; };
-		7541C0D025E1440200DA55C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541C0CF25E1440200DA55C4 /* ContentView.swift */; };
 		7541C0D225E1440400DA55C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7541C0D125E1440400DA55C4 /* Assets.xcassets */; };
 		7541C0D525E1440400DA55C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7541C0D425E1440400DA55C4 /* Preview Assets.xcassets */; };
+		7567BD7C260FB515006FE71E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7567BD7B260FB515006FE71E /* URLImage */; };
+		7567BD7E260FEF9D006FE71E /* trendingSnippetData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7567BD7D260FEF9D006FE71E /* trendingSnippetData.json */; };
+		759E800325E43A70001B28E0 /* SearchViewLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E800225E43A70001B28E0 /* SearchViewLanding.swift */; };
+		759E800725E542F5001B28E0 /* SnippetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E800625E542F5001B28E0 /* SnippetViewModel.swift */; };
+		75D0ED3325E950ED0063A673 /* snippetData.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D0ED3225E950ED0063A673 /* snippetData.json */; };
+		75D0ED5B25E96FC00063A673 /* zStocks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75D0ED5925E96FC00063A673 /* zStocks.xcdatamodeld */; };
+		75D0ED5D25E9702A0063A673 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0ED5C25E9702A0063A673 /* Persistance.swift */; };
+		75DAB6EB25EA4C3B00265A64 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DAB6EA25EA4C3B00265A64 /* SearchBar.swift */; };
+		75DAB6ED25EBB8D400265A64 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DAB6EC25EBB8D400265A64 /* Favourites.swift */; };
+		75DF0EEE25F2197900CFEB32 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EED25F2197900CFEB32 /* CardView.swift */; };
+		75DF0EF025F2B16400CFEB32 /* NewStocksHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */; };
+		75DF0EF225F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */; };
+		75DF0EF525F359BC00CFEB32 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 75DF0EF425F359BC00CFEB32 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751B09BE26113F43009C40B2 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
+		751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNavigation.swift; sourceTree = "<group>"; };
+		751B09C52611E159009C40B2 /* testGraphData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testGraphData.json; sourceTree = "<group>"; };
+		751B09C92611EDCA009C40B2 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingIndicator.swift; sourceTree = "<group>"; };
+		751B09CD26120B91009C40B2 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		7540C37C25E2A4E3006DC20A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		7540C37D25E2A4E3006DC20A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		7540C38025E2AE60006DC20A /* SnippetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetView.swift; sourceTree = "<group>"; };
 		7541C0CA25E1440200DA55C4 /* zStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7541C0CD25E1440200DA55C4 /* zStocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zStocksApp.swift; sourceTree = "<group>"; };
-		7541C0CF25E1440200DA55C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7541C0D125E1440400DA55C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7541C0D425E1440400DA55C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7541C0D625E1440400DA55C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7567BD7D260FEF9D006FE71E /* trendingSnippetData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trendingSnippetData.json; sourceTree = "<group>"; };
+		759E800225E43A70001B28E0 /* SearchViewLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewLanding.swift; sourceTree = "<group>"; };
+		759E800625E542F5001B28E0 /* SnippetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetViewModel.swift; sourceTree = "<group>"; };
+		75D0ED3225E950ED0063A673 /* snippetData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snippetData.json; sourceTree = "<group>"; };
+		75D0ED5A25E96FC00063A673 /* zStocks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = zStocks.xcdatamodel; sourceTree = "<group>"; };
+		75D0ED5C25E9702A0063A673 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		75DAB6EA25EA4C3B00265A64 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		75DAB6EC25EBB8D400265A64 /* Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
+		75DF0EED25F2197900CFEB32 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStocksHomeView.swift; sourceTree = "<group>"; };
+		75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeScreenNaviView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +68,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */,
+				7567BD7C260FB515006FE71E /* URLImage in Frameworks */,
+				75DF0EF525F359BC00CFEB32 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7540C37B25E2A46B006DC20A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7540C37D25E2A4E3006DC20A /* Montserrat-Bold.ttf */,
+				7540C37C25E2A4E3006DC20A /* Montserrat-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		7541C0C125E1440200DA55C4 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +106,27 @@
 			isa = PBXGroup;
 			children = (
 				7541C0CD25E1440200DA55C4 /* zStocksApp.swift */,
-				7541C0CF25E1440200DA55C4 /* ContentView.swift */,
+				751B09CD26120B91009C40B2 /* NetworkMonitor.swift */,
+				751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */,
+				751B09C92611EDCA009C40B2 /* CustomScrollView.swift */,
+				751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */,
+				75DF0EED25F2197900CFEB32 /* CardView.swift */,
+				75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */,
+				75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */,
+				75DAB6EC25EBB8D400265A64 /* Favourites.swift */,
+				7540C38025E2AE60006DC20A /* SnippetView.swift */,
+				759E800625E542F5001B28E0 /* SnippetViewModel.swift */,
+				75DAB6EA25EA4C3B00265A64 /* SearchBar.swift */,
+				759E800225E43A70001B28E0 /* SearchViewLanding.swift */,
+				751B09BE26113F43009C40B2 /* SearchResultsView.swift */,
+				7567BD7D260FEF9D006FE71E /* trendingSnippetData.json */,
+				751B09C52611E159009C40B2 /* testGraphData.json */,
+				75D0ED3225E950ED0063A673 /* snippetData.json */,
 				7541C0D125E1440400DA55C4 /* Assets.xcassets */,
 				7541C0D625E1440400DA55C4 /* Info.plist */,
+				75D0ED5C25E9702A0063A673 /* Persistance.swift */,
+				75D0ED5925E96FC00063A673 /* zStocks.xcdatamodeld */,
+				7540C37B25E2A46B006DC20A /* Font */,
 				7541C0D325E1440400DA55C4 /* Preview Content */,
 			);
 			path = zStocks;
@@ -85,6 +156,11 @@
 			dependencies = (
 			);
 			name = zStocks;
+			packageProductDependencies = (
+				75DF0EF425F359BC00CFEB32 /* SwiftUIX */,
+				7567BD7B260FB515006FE71E /* URLImage */,
+				751B09C12611DD3E009C40B2 /* SwiftUICharts */,
+			);
 			productName = zStocks;
 			productReference = 7541C0CA25E1440200DA55C4 /* zStocks.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +188,11 @@
 				Base,
 			);
 			mainGroup = 7541C0C125E1440200DA55C4;
+			packageReferences = (
+				75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */,
+				751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 7541C0CB25E1440200DA55C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +207,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7567BD7E260FEF9D006FE71E /* trendingSnippetData.json in Resources */,
+				7540C37F25E2A4E3006DC20A /* Montserrat-Bold.ttf in Resources */,
+				751B09C62611E159009C40B2 /* testGraphData.json in Resources */,
+				7540C37E25E2A4E3006DC20A /* Montserrat-SemiBold.ttf in Resources */,
+				75D0ED3325E950ED0063A673 /* snippetData.json in Resources */,
 				7541C0D525E1440400DA55C4 /* Preview Assets.xcassets in Resources */,
 				7541C0D225E1440400DA55C4 /* Assets.xcassets in Resources */,
 			);
@@ -138,8 +224,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7541C0D025E1440200DA55C4 /* ContentView.swift in Sources */,
+				75DAB6EB25EA4C3B00265A64 /* SearchBar.swift in Sources */,
+				75DAB6ED25EBB8D400265A64 /* Favourites.swift in Sources */,
+				75D0ED5B25E96FC00063A673 /* zStocks.xcdatamodeld in Sources */,
+				751B09C42611DE8B009C40B2 /* CardViewNavigation.swift in Sources */,
+				759E800725E542F5001B28E0 /* SnippetViewModel.swift in Sources */,
+				75D0ED5D25E9702A0063A673 /* Persistance.swift in Sources */,
+				7540C38125E2AE60006DC20A /* SnippetView.swift in Sources */,
+				75DF0EF025F2B16400CFEB32 /* NewStocksHomeView.swift in Sources */,
+				759E800325E43A70001B28E0 /* SearchViewLanding.swift in Sources */,
+				75DF0EF225F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift in Sources */,
 				7541C0CE25E1440200DA55C4 /* zStocksApp.swift in Sources */,
+				751B09CA2611EDCA009C40B2 /* CustomScrollView.swift in Sources */,
+				751B09BF26113F43009C40B2 /* SearchResultsView.swift in Sources */,
+				751B09CC261202C4009C40B2 /* CustomLoadingIndicator.swift in Sources */,
+				751B09CE26120B91009C40B2 /* NetworkMonitor.swift in Sources */,
+				75DF0EEE25F2197900CFEB32 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.HansaDev.zStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.HansaDev.zStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +428,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		751B09C12611DD3E009C40B2 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		7567BD7B260FB515006FE71E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		75DF0EF425F359BC00CFEB32 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		75D0ED5925E96FC00063A673 /* zStocks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75D0ED5A25E96FC00063A673 /* zStocks.xcdatamodel */,
+			);
+			currentVersion = 75D0ED5A25E96FC00063A673 /* zStocks.xcdatamodel */;
+			path = zStocks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7541C0C225E1440200DA55C4 /* Project object */;
 }
