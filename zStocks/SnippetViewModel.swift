@@ -50,6 +50,7 @@ class SnippetViewModel: ObservableObject {
     @Published var favSnippets: [Snippet] = []
     @Published var trendingSnippets: [Snippet] = []
     @Published var searchResultsSnippets: [Snippet] = []
+    @Published var isLoading = false
     @ObservedObject var favorites = Favorites()
     @ObservedObject var monitor = NetworkMonitor()
     
@@ -113,6 +114,7 @@ class SnippetViewModel: ObservableObject {
             
         }
         
+        //favSnippets.objectWillChange.send()
         print(favSnippets)
         
     }
@@ -181,6 +183,8 @@ class SnippetViewModel: ObservableObject {
             }
             
             let searchResQuery: String = searchSymbols.joined(separator: ",")
+            
+            self.isLoading = true
     
             taskFive = URLSession.shared.dataTaskPublisher(for: URL(string: "https://financialmodelingprep.com/api/v3/profile/\(searchResQuery)?apikey=\(apiKey)")!)
                 .map { $0.data }
@@ -188,7 +192,12 @@ class SnippetViewModel: ObservableObject {
                 .replaceError(with: [])
                 .eraseToAnyPublisher()
                 .receive(on: RunLoop.main)
-                .assign(to: \SnippetViewModel.searchResultsSnippets, on: self)
+                .sink(receiveValue: { value in
+                    print(value)
+                    self.searchResultsSnippets = value
+                    self.isLoading = false
+                })
+                //.assign(to: \SnippetViewModel.searchResultsSnippets, on: self)
             
         }
         
@@ -197,7 +206,7 @@ class SnippetViewModel: ObservableObject {
     
     func fetchTrending() {
         
-        useAPI = (monitor.isConnected ? true : false)
+        //useAPI = (monitor.isConnected ? true : false)
         
         if useAPI {
             
@@ -249,7 +258,7 @@ class SnippetViewModel: ObservableObject {
     
     func fetchSnippets() {
         
-        useAPI = (monitor.isConnected ? true : false)
+        //useAPI = (monitor.isConnected ? true : false)
         
         if useAPI {
             

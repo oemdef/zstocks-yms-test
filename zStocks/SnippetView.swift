@@ -12,7 +12,7 @@ struct SnippetView: View {
     
     @State private var snippet: Snippet
     private var editorsPickSymbols: [String] = ["YNDX", "GOOGL", "AAPL", "BAC", "AMZN", "MSFT", "MA", "TSLA"]
-    private var weirdos: [String] = ["ASML.AS","INTC","NFLX","PYPL"]
+    private var weirdos: [String] = ["ASML.AS","INTC","NFLX","PYPL","JNJ"]
     
     init(snippet: Snippet) {
         self.snippet = snippet

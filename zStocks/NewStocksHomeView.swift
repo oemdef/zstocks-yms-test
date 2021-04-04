@@ -13,8 +13,8 @@ struct NewStocksHomeView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    @ObservedObject var viewModel = SnippetViewModel()
-    @ObservedObject var trendingViewModel = SnippetViewModel()
+    @StateObject var viewModel = SnippetViewModel()
+    //@ObservedObject var trendingViewModel = SnippetViewModel()
     @ObservedObject var monitor = NetworkMonitor()
     
     @ObservedObject var favorites = Favorites()

@@ -22,13 +22,14 @@ struct SearchResultsView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    isCompactView = false
-                    UIApplication.shared.endEditing()
-                }, label: {
-                    Text(isCompactView ? "Show more" : "").font(.custom("Montserrat-Semibold", size: 14, relativeTo: .title)).foregroundColor(Color("TextColor"))
-                })
-                
+                if viewModel.searchResultsSnippets.count > compactLimit {
+                    Button(action: {
+                        isCompactView = false
+                        UIApplication.shared.endEditing()
+                    }, label: {
+                        Text(isCompactView ? "Show more" : "").font(.custom("Montserrat-Semibold", size: 14, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                    })
+                }
             }
             .padding(.horizontal)
             
@@ -62,8 +63,20 @@ struct SearchResultsView: View {
                         
                     } else {
                         HStack {
-                            //Image(systemName: "nosign")
-                            Text("Loading results").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                            if viewModel.isLoading {
+                                HStack {
+                                    //CustomLoadingIndicator().frame(width: 22, height: 22)
+                                    Text("Loading results").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                                }
+                                
+                            } else {
+                                HStack{
+                                    Image(systemName: "nosign")
+                                    Text("No results found").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                                }
+                            }
+                            
+                            
                         }
                     }
                     
