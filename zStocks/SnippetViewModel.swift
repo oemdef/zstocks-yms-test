@@ -206,7 +206,7 @@ class SnippetViewModel: ObservableObject {
     
     func fetchTrending() {
         
-        //useAPI = (monitor.isConnected ? true : false)
+        useAPI = (monitor.isConnected ? true : false)
         
         if useAPI {
             
@@ -258,7 +258,7 @@ class SnippetViewModel: ObservableObject {
     
     func fetchSnippets() {
         
-        //useAPI = (monitor.isConnected ? true : false)
+        useAPI = (monitor.isConnected ? true : false)
         
         if useAPI {
             
