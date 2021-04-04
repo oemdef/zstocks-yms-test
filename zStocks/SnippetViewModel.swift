@@ -83,8 +83,6 @@ class SnippetViewModel: ObservableObject {
         
         trendingSnippets.forEach { snippet in
             
-            
-            
             print("checking")
             print(snippet.symbol)
             
@@ -95,8 +93,27 @@ class SnippetViewModel: ObservableObject {
                     print(snippet.symbol)
                 }
             }
+        
+        }
+        
+        searchResultsSnippets.forEach { snippet in
+            
+            print("checking")
+            print(snippet.symbol)
+            
+            if !editorsPickSymbols.contains(snippet.symbol) {
+                if !trendingSymbols.contains(snippet.symbol) {
+                    if favorites.contains(snippet) {
+                        favSnippets.append(snippet)
+                        print("appended")
+                        print(snippet.symbol)
+                    }
+                }
+            }
             
         }
+        
+        print(favSnippets)
         
     }
     
@@ -144,11 +161,11 @@ class SnippetViewModel: ObservableObject {
             .replaceError(with: [])
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
-            .assign(to: \SnippetViewModel.searchResponse, on: self)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.fetchSearchResults()
-        }
+            .sink(receiveValue: { value in
+                print(value)
+                self.searchResponse = value
+                self.fetchSearchResults()
+            })
         
     }
     
@@ -161,16 +178,9 @@ class SnippetViewModel: ObservableObject {
                 
                 searchSymbols.insert(response.symbol)
                 
-                /*favorites.getTaskIds().forEach { symbol in
-                    if !searchSymbols.contains(symbol) {
-                        searchSymbols.insert(symbol)
-                    }
-                }*/
-                
             }
             
             let searchResQuery: String = searchSymbols.joined(separator: ",")
-            
     
             taskFive = URLSession.shared.dataTaskPublisher(for: URL(string: "https://financialmodelingprep.com/api/v3/profile/\(searchResQuery)?apikey=\(apiKey)")!)
                 .map { $0.data }
@@ -180,9 +190,8 @@ class SnippetViewModel: ObservableObject {
                 .receive(on: RunLoop.main)
                 .assign(to: \SnippetViewModel.searchResultsSnippets, on: self)
             
-            
-            
         }
+        
     }
     
     
@@ -194,42 +203,17 @@ class SnippetViewModel: ObservableObject {
             
             let trendingUrl: String = "https://financialmodelingprep.com/api/v3/stock-screener?limit=50&apikey=\(apiKey)"
             
-            
             taskTwo = URLSession.shared.dataTaskPublisher(for: URL(string: trendingUrl)!)
                 .map { $0.data }
                 .decode(type: [TrendingResponse].self, decoder: JSONDecoder())
                 .replaceError(with: [])
                 .eraseToAnyPublisher()
                 .receive(on: RunLoop.main)
-                .assign(to: \SnippetViewModel.trendingResponse, on: self)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.getTrendingSnippets()
-            }
-            
-            
-            
-            /*URLSession.shared.dataTask(with: trendingUrl) { (data, _, _) in
-             
-             self.trendingResponse = try! JSONDecoder().decode([TrendingResponse].self, from: data!)
-             
-             /*DispatchQueue.main.async {
-             self.getTrendingQueryUrl()
-             }*/
-             
-             }.resume()*/
-            
-            
-            
-            
-            /*URLSession.shared.dataTask(with: trQueryUrl) { (data, _, _) in
-             self.trendingSnippets = try! JSONDecoder().decode([Snippet].self, from: data!)
-             }.resume()*/
-            
-            
-            
-            
-            
+                .sink(receiveValue: { value in
+                    print(value)
+                    self.trendingResponse = value
+                    self.getTrendingSnippets()
+                })
             
         } else {
             

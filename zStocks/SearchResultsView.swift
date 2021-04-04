@@ -70,6 +70,9 @@ struct SearchResultsView: View {
                 }.onAppear {
                     self.viewModel.getFavorites()
                 }
+                .onDisappear {
+                    self.viewModel.getFavorites()
+                }
             }
             
             Spacer()

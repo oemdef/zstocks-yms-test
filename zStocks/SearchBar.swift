@@ -11,6 +11,8 @@ struct SearchBar: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    //@ObservedObject var viewModel = SnippetViewModel()
+    
     @Binding var text : String
     @Binding var isSearching : Bool
     @Binding var isActivelySearching : Bool

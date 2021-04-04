@@ -127,15 +127,6 @@ struct NewStocksHomeView: View {
                                     }
                                 }
                                 
-                                
-                                /*HStack {
-                                 Text("Placeholder").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
-                                 
-                                 Spacer()
-                                 }
-                                 .padding()
-                                 .padding(.vertical, 200)*/
-                                
                             }
                         }
                         //.padding(.top, getVStackOffset(scrollViewOffset: scrollViewOffset))
