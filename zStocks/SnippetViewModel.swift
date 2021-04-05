@@ -9,29 +9,67 @@ import Foundation
 import SwiftUI
 import Combine
 import DataCache
-//import SwiftlyCache
 
-
-
-
-struct Snippet: Hashable, Codable, Identifiable {
-    //var id: Int
-    let symbol: String
-    let price: Double
-    let changes: Double
-    let companyName: String
-    let image: String
-    let defaultImage: Bool
+open class Snippet: NSObject,  NSCoding, Codable, Identifiable {
     
-    var isOdd: Bool = true
-    let id = UUID().uuidString
-    var isFavourite: Bool = false
+    open var symbol: String = ""
+    open var price: Double = 0
+    open var changes: Double = 0
+    open var companyName: String = ""
+    open var image: String = ""
+    open var defaultImage: Bool = true
+    
+    open var isOdd: Bool = true
+    open var id = UUID().uuidString
+    open var isFavourite: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case symbol, price, changes, companyName, image, defaultImage
     }
     
+    override init() {
+        
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        self.symbol = aDecoder.decodeObject(forKey: "symbol") as! String
+        self.price = aDecoder.decodeDouble(forKey: "price")
+        self.changes = aDecoder.decodeDouble(forKey: "changes")
+        self.companyName = aDecoder.decodeObject(forKey: "companyName") as! String
+        self.image = aDecoder.decodeObject(forKey: "image") as! String
+        self.defaultImage = aDecoder.decodeBool(forKey: "defaultImage")
+    }
+    
+    open func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.symbol, forKey: "symbol")
+        aCoder.encode(self.price, forKey: "price")
+        aCoder.encode(self.changes, forKey: "changes")
+        aCoder.encode(self.companyName, forKey: "companyName")
+        aCoder.encode(self.image, forKey: "image")
+        aCoder.encode(self.defaultImage, forKey: "defaultImage")
+    }
+    
 }
+
+
+/*struct Snippet: Hashable, Codable, Identifiable {
+ //var id: Int
+ let symbol: String
+ let price: Double
+ let changes: Double
+ let companyName: String
+ let image: String
+ let defaultImage: Bool
+ 
+ var isOdd: Bool = true
+ let id = UUID().uuidString
+ var isFavourite: Bool = false
+ 
+ enum CodingKeys: String, CodingKey {
+ case symbol, price, changes, companyName, image, defaultImage
+ }
+ 
+ }*/
 
 struct TrendingResponse: Hashable, Codable {
     let symbol: String
@@ -43,7 +81,8 @@ struct SearchResponse: Hashable, Codable {
 
 class SnippetViewModel: ObservableObject {
     
-    private var apiKey = "9ac38fb881b5427253c99350334ba085"
+    //private var apiKey = "9ac38fb881b5427253c99350334ba085"
+    private var apiKey = "87039e6143ac8c095864537ccde689c4"
     private var profileUrl = "https://financialmodelingprep.com/api/v3/profile/"
     private var taskOne: AnyCancellable?
     private var taskTwo: AnyCancellable?
@@ -56,6 +95,8 @@ class SnippetViewModel: ObservableObject {
     @Published var trendingSnippets: [Snippet] = []
     @Published var searchResultsSnippets: [Snippet] = []
     @Published var isLoading = false
+    @Published var lastUpdateSuccess = false
+    @Published var lastUpdatedString = "6 Apr 2021, 01:25"
     @ObservedObject var favorites = Favorites()
     @ObservedObject var monitor = NetworkMonitor()
     
@@ -66,6 +107,15 @@ class SnippetViewModel: ObservableObject {
     private var editorsPickSymbols: [String] = ["YNDX", "GOOGL", "AAPL", "BAC", "AMZN", "MSFT", "MA", "TSLA"]
     private var useAPI : Bool = false
     
+    func getDateString() {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .medium
+        if self.lastUpdateSuccess == true {
+            lastUpdatedString = formatter.string(from: currentDateTime)
+        }
+    }
     
     func getFavorites() {
         
@@ -98,7 +148,7 @@ class SnippetViewModel: ObservableObject {
                     print(snippet.symbol)
                 }
             }
-        
+            
         }
         
         searchResultsSnippets.forEach { snippet in
@@ -138,6 +188,8 @@ class SnippetViewModel: ObservableObject {
                 
             }
             
+            self.lastUpdateSuccess = false
+            
             let trendingQuery: String = trendingSymbols.joined(separator: ",")
             
             guard let trQueryUrl = URL(string: "https://financialmodelingprep.com/api/v3/profile/\(trendingQuery)?apikey=\(apiKey)") else { return }
@@ -150,9 +202,19 @@ class SnippetViewModel: ObservableObject {
                 .replaceError(with: [])
                 .eraseToAnyPublisher()
                 .receive(on: RunLoop.main)
-                .sink(receiveValue: { value in
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        self.lastUpdateSuccess = false
+                        print(error)
+                    case .finished:
+                        self.lastUpdateSuccess = true
+                        print("Success")
+                        self.getDateString()
+                    }
+                }, receiveValue: { value in
                     self.trendingSnippets = value
-                    //DataCache.instance.write(array: self.trendingSnippets, forKey: "trendingSnippets")
+                    DataCache.instance.write(array: self.trendingSnippets, forKey: "trendingSnippets")
                 })
             
         }
@@ -188,7 +250,7 @@ class SnippetViewModel: ObservableObject {
             let searchResQuery: String = searchSymbols.joined(separator: ",")
             
             self.isLoading = true
-    
+            
             taskFive = URLSession.shared.dataTaskPublisher(for: URL(string: "https://financialmodelingprep.com/api/v3/profile/\(searchResQuery)?apikey=\(apiKey)")!)
                 .map { $0.data }
                 .decode(type: [Snippet].self, decoder: JSONDecoder())
@@ -228,32 +290,35 @@ class SnippetViewModel: ObservableObject {
             
         } else {
             
-            //snippets = DataCache.instance.readArray(forKey: "trendingSnippets") as! [Snippet]
-            
-            trendingSnippets = load("trendingSnippetData.json")
-            
-            func load<T: Decodable>(_ filename: String) -> T {
-                let data: Data
+            if DataCache.instance.hasDataOnDisk(forKey: "trendingSnippets") {
+                trendingSnippets = DataCache.instance.readArray(forKey: "trendingSnippets") as! [Snippet]
+            } else {
                 
-                guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-                else {
-                    fatalError("Couldn't find \(filename) in main bundle.")
+                trendingSnippets = load("trendingSnippetData.json")
+                
+                func load<T: Decodable>(_ filename: String) -> T {
+                    let data: Data
+                    
+                    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+                    else {
+                        fatalError("Couldn't find \(filename) in main bundle.")
+                    }
+                    
+                    do {
+                        data = try Data(contentsOf: file)
+                    } catch {
+                        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+                    }
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        return try decoder.decode(T.self, from: data)
+                    } catch {
+                        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+                    }
                 }
                 
-                do {
-                    data = try Data(contentsOf: file)
-                } catch {
-                    fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    return try decoder.decode(T.self, from: data)
-                } catch {
-                    fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-                }
             }
-            
             
         }
         
@@ -266,8 +331,12 @@ class SnippetViewModel: ObservableObject {
         
         if useAPI {
             
+            self.lastUpdateSuccess = false
+            
             let pickQuery = editorsPickSymbols.joined(separator: ",")
             let url = "\(profileUrl)\(pickQuery)?apikey=\(apiKey)"
+            
+            print(url)
             
             taskOne = URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
                 .map { $0.data }
@@ -277,35 +346,41 @@ class SnippetViewModel: ObservableObject {
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { value in
                     self.snippets = value
-                    //DataCache.instance.write(array: self.snippets, forKey: "editorsPickSnippets")
+                    DataCache.instance.write(array: self.snippets as [Snippet], forKey: "editorsPickSnippets")
+                    self.lastUpdateSuccess = true
+                    self.getDateString()
                 })
             
         } else {
             
-            //snippets = DataCache.instance.readArray(forKey: "editorsPickSnippets") as! [Snippet]
-            
-            snippets = load("snippetData.json")
-            
-            func load<T: Decodable>(_ filename: String) -> T {
-                let data: Data
+            if DataCache.instance.hasDataOnDisk(forKey: "editorsPickSnippets") {
+                snippets = DataCache.instance.readArray(forKey: "editorsPickSnippets") as! [Snippet]
+            } else {
                 
-                guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-                else {
-                    fatalError("Couldn't find \(filename) in main bundle.")
+                snippets = load("snippetData.json")
+                
+                func load<T: Decodable>(_ filename: String) -> T {
+                    let data: Data
+                    
+                    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+                    else {
+                        fatalError("Couldn't find \(filename) in main bundle.")
+                    }
+                    
+                    do {
+                        data = try Data(contentsOf: file)
+                    } catch {
+                        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+                    }
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        return try decoder.decode(T.self, from: data)
+                    } catch {
+                        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+                    }
                 }
                 
-                do {
-                    data = try Data(contentsOf: file)
-                } catch {
-                    fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    return try decoder.decode(T.self, from: data)
-                } catch {
-                    fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-                }
             }
             
         }

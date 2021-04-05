@@ -19,17 +19,8 @@ struct NewStocksHomeView: View {
     @State var isSelected = 0
     @State var isSearching = false
     @State var isActivelySearching = false
-    @State var lastUpdatedString = "never"
     @State var text: String = ""
     @State var scrollViewOffset : CGFloat = 160
-    
-    func getDateString() {
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .medium
-        lastUpdatedString = formatter.string(from: currentDateTime)
-    }
     
     func getVStackOffset (scrollViewOffset a: CGFloat) -> CGFloat {
         if a >= 0 {
@@ -44,7 +35,6 @@ struct NewStocksHomeView: View {
     func getDataOnLaunch() {
         viewModel.fetchSnippets()
         viewModel.fetchTrending()
-        getDateString()
     }
     
     
@@ -109,7 +99,7 @@ struct NewStocksHomeView: View {
                         Image(systemName: monitor.isConnected ? "wifi" : "wifi.slash")
                         VStack (alignment: .leading) {
                             Text(monitor.isConnected ? "Connection established" : "No connection").font(.custom("Montserrat-Bold", size: 16, relativeTo: .title)).foregroundColor(Color("TextColor"))
-                            Text("Last updated: \(lastUpdatedString)").font(.custom("Montserrat-Semibold", size: 12, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                            Text("Last updated: \(viewModel.lastUpdatedString)").font(.custom("Montserrat-Semibold", size: 12, relativeTo: .title)).foregroundColor(Color("TextColor"))
                         }
                         Spacer()
                         Button(action: {
@@ -175,7 +165,7 @@ struct NewStocksHomeView: View {
                         Image(systemName: monitor.isConnected ? "wifi" : "wifi.slash")
                         VStack (alignment: .leading) {
                             Text(monitor.isConnected ? "Connection established" : "No connection").font(.custom("Montserrat-Bold", size: 16, relativeTo: .title)).foregroundColor(Color("TextColor"))
-                            Text("Last updated: \(lastUpdatedString)").font(.custom("Montserrat-Semibold", size: 12, relativeTo: .title)).foregroundColor(Color("TextColor"))
+                            Text("Last updated: \(viewModel.lastUpdatedString)").font(.custom("Montserrat-Semibold", size: 12, relativeTo: .title)).foregroundColor(Color("TextColor"))
                         }
                         Spacer()
                         Button(action: {
