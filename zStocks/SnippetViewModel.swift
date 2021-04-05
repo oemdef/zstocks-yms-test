@@ -113,8 +113,6 @@ class SnippetViewModel: ObservableObject {
             }
             
         }
-        
-        //favSnippets.objectWillChange.send()
         print(favSnippets)
         
     }
@@ -157,7 +155,7 @@ class SnippetViewModel: ObservableObject {
     
     func getSearchResponse(searchQuery: String) {
         
-        taskFour = URLSession.shared.dataTaskPublisher(for: URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searchQuery.replacingOccurrences(of: " ", with: "%20"))&limit=10&apikey=\(apiKey)")!)
+        taskFour = URLSession.shared.dataTaskPublisher(for: URL(string: "https://financialmodelingprep.com/api/v3/search?query=\(searchQuery.replacingOccurrences(of: " ", with: "%20"))&limit=25&apikey=\(apiKey)")!)
             .map { $0.data }
             .decode(type: [SearchResponse].self, decoder: JSONDecoder())
             .replaceError(with: [])
@@ -197,7 +195,6 @@ class SnippetViewModel: ObservableObject {
                     self.searchResultsSnippets = value
                     self.isLoading = false
                 })
-                //.assign(to: \SnippetViewModel.searchResultsSnippets, on: self)
             
         }
         

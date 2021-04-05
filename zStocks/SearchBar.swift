@@ -18,8 +18,10 @@ struct SearchBar: View {
     @Binding var isActivelySearching : Bool
     @State private var isEditing = false
     @State private var isEmpty = false
+    private let pattern = "^[A-Za-z\\s.-]*$"
     
     var body: some View {
+        
         HStack {
             
             ZStack(alignment: .leading) {
@@ -38,6 +40,7 @@ struct SearchBar: View {
                 { isEditing in
                     self.isEditing = isEditing
                     if !text.isEmpty {
+                        isEmpty = false
                         isActivelySearching = true
                     } else {
                         isActivelySearching = false

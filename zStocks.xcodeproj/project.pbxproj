@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A74B0B456B99B1027EE8951 /* Pods_zStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */; };
 		751B09BF26113F43009C40B2 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09BE26113F43009C40B2 /* SearchResultsView.swift */; };
 		751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 751B09C12611DD3E009C40B2 /* SwiftUICharts */; };
 		751B09C42611DE8B009C40B2 /* CardViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */; };
 		751B09C62611E159009C40B2 /* testGraphData.json in Resources */ = {isa = PBXBuildFile; fileRef = 751B09C52611E159009C40B2 /* testGraphData.json */; };
 		751B09CA2611EDCA009C40B2 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C92611EDCA009C40B2 /* CustomScrollView.swift */; };
-		751B09CC261202C4009C40B2 /* CustomLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */; };
 		751B09CE26120B91009C40B2 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09CD26120B91009C40B2 /* NetworkMonitor.swift */; };
 		7540C37E25E2A4E3006DC20A /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7540C37C25E2A4E3006DC20A /* Montserrat-SemiBold.ttf */; };
 		7540C37F25E2A4E3006DC20A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7540C37D25E2A4E3006DC20A /* Montserrat-Bold.ttf */; };
@@ -36,11 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zStocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.release.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.release.xcconfig"; sourceTree = "<group>"; };
 		751B09BE26113F43009C40B2 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNavigation.swift; sourceTree = "<group>"; };
 		751B09C52611E159009C40B2 /* testGraphData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testGraphData.json; sourceTree = "<group>"; };
 		751B09C92611EDCA009C40B2 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
-		751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingIndicator.swift; sourceTree = "<group>"; };
 		751B09CD26120B91009C40B2 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		7540C37C25E2A4E3006DC20A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		7540C37D25E2A4E3006DC20A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		75DF0EED25F2197900CFEB32 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStocksHomeView.swift; sourceTree = "<group>"; };
 		75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeScreenNaviView.swift; sourceTree = "<group>"; };
+		D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.debug.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +73,22 @@
 				751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */,
 				7567BD7C260FB515006FE71E /* URLImage in Frameworks */,
 				75DF0EF525F359BC00CFEB32 /* SwiftUIX in Frameworks */,
+				2A74B0B456B99B1027EE8951 /* Pods_zStocks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2E00485A257E6F8E72E7E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */,
+				71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7540C37B25E2A46B006DC20A /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,8 @@
 			children = (
 				7541C0CC25E1440200DA55C4 /* zStocks */,
 				7541C0CB25E1440200DA55C4 /* Products */,
+				4A2E00485A257E6F8E72E7E9 /* Pods */,
+				76BE357C881F066CCD7DAE27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +121,6 @@
 			children = (
 				7541C0CD25E1440200DA55C4 /* zStocksApp.swift */,
 				751B09CD26120B91009C40B2 /* NetworkMonitor.swift */,
-				751B09CB261202C4009C40B2 /* CustomLoadingIndicator.swift */,
 				751B09C92611EDCA009C40B2 /* CustomScrollView.swift */,
 				751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */,
 				75DF0EED25F2197900CFEB32 /* CardView.swift */,
@@ -140,6 +153,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		76BE357C881F066CCD7DAE27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7541C0D925E1440400DA55C4 /* Build configuration list for PBXNativeTarget "zStocks" */;
 			buildPhases = (
+				E0584DE9558C963379179DE6 /* [CP] Check Pods Manifest.lock */,
 				7541C0C625E1440200DA55C4 /* Sources */,
 				7541C0C725E1440200DA55C4 /* Frameworks */,
 				7541C0C825E1440200DA55C4 /* Resources */,
+				444AC29D8263B38B62752095 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +242,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		444AC29D8263B38B62752095 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zStocks/Pods-zStocks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zStocks/Pods-zStocks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zStocks/Pods-zStocks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0584DE9558C963379179DE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zStocks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7541C0C625E1440200DA55C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -237,7 +302,6 @@
 				7541C0CE25E1440200DA55C4 /* zStocksApp.swift in Sources */,
 				751B09CA2611EDCA009C40B2 /* CustomScrollView.swift in Sources */,
 				751B09BF26113F43009C40B2 /* SearchResultsView.swift in Sources */,
-				751B09CC261202C4009C40B2 /* CustomLoadingIndicator.swift in Sources */,
 				751B09CE26120B91009C40B2 /* NetworkMonitor.swift in Sources */,
 				75DF0EEE25F2197900CFEB32 /* CardView.swift in Sources */,
 			);
@@ -364,6 +428,7 @@
 		};
 		7541C0DA25E1440400DA55C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +451,7 @@
 		};
 		7541C0DB25E1440400DA55C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

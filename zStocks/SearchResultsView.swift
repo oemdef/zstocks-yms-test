@@ -14,6 +14,7 @@ struct SearchResultsView: View {
     @State var compactLimit: Int = 4
     @State var isCompactView: Bool = true
     @Binding var searchQuery : String
+    let rexPattern = "^[A-Za-z\\s.-]*$"
     
     var body: some View {
         VStack {
@@ -65,18 +66,15 @@ struct SearchResultsView: View {
                         HStack {
                             if viewModel.isLoading {
                                 HStack {
-                                    //CustomLoadingIndicator().frame(width: 22, height: 22)
+                                    ProgressView().frame(width: 22, height: 22).padding()   
                                     Text("Loading results").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
                                 }
-                                
                             } else {
                                 HStack{
                                     Image(systemName: "nosign")
                                     Text("No results found").font(.custom("Montserrat-Bold", size: 22, relativeTo: .title)).foregroundColor(Color("TextColor"))
                                 }
                             }
-                            
-                            
                         }
                     }
                     
@@ -86,12 +84,17 @@ struct SearchResultsView: View {
                 .onDisappear {
                     self.viewModel.getFavorites()
                 }
+            }.onAppear {
+                viewModel.isLoading = true
+                if (searchQuery.range(of: rexPattern, options:.regularExpression) != nil) {
+                    viewModel.getSearchResponse(searchQuery: searchQuery)
+                } else {
+                    viewModel.isLoading = false
+                }
             }
             
             Spacer()
             
-        }.onAppear(perform: {
-            viewModel.getSearchResponse(searchQuery: searchQuery)
-        })
+        }
     }
 }

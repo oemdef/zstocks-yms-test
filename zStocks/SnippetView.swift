@@ -52,70 +52,12 @@ struct SnippetView: View {
     var body: some View {
         
         VStack {
-            /*HStack {
-             Button(action: {
-             withAnimation(.spring()){
-             //topBarCollapsed.toggle()
-             //isOdd.toggle()
-             }
-             }, label: {
-             Image(name).resizable().frame(width: 60, height: 60).cornerRadius(15).padding(.leading, 2.0)
-             })
-             VStack {
-             HStack(alignment: .center) {
-             Text(name)
-             Button(action: {isFavourite.toggle()}, label: {
-             Image("StarIcon").renderingMode(.template).foregroundColor(isFavourite ? .yellow : .gray)
-             })
-             Spacer()
-             Text("$" + String(price))
-             }
-             .padding(.trailing, 3.0)
-             .font(.custom("Montserrat-Bold", size: 22))
-             
-             HStack {
-             Text(companyName)
-             Spacer()
-             Text(getDeltaString(price: price, priceDelta: priceDelta)).foregroundColor(.green)
-             }
-             .font(.custom("Montserrat-SemiBold", size: 14))
-             .padding(.top, -5.0)
-             
-             }
-             .padding(.horizontal, 8.0)
-             .padding(.vertical, 8.0)
-             }
-             .padding(8.0)
-             .background(isOdd ? Color("shadedbg") : Color.clear)
-             .cornerRadius(20)
-             .padding(.horizontal)
-             .padding(.vertical, 4.0)*/
             
             HStack {
-                /*Button(action: {
-                 withAnimation(.spring()){
-                 //topBarCollapsed.toggle()
-                 //isOdd.toggle()
-                 }
-                 }, label: {
-                 if editorsPickSymbols.contains(snippet.symbol) {
-                 Image(snippet.symbol).resizable().frame(width: 60, height: 60).cornerRadius(15).padding(.leading, 2.0)
-                 } else {
-                 
-                 URLImage(snippet.image)
-                 
-                 /*RemoteImage(url: snippet.image)
-                 .aspectRatio(contentMode: .fit)
-                 .frame(width: 60)
-                 .background(Color("trendbg")).frame(width: 60, height: 60).cornerRadius(15).padding(.leading, 2.0)*/
-                 }
-                 })*/
                 
                 if editorsPickSymbols.contains(snippet.symbol) {
                     Image(snippet.symbol).resizable().frame(width: 60, height: 60).cornerRadius(15).padding(.leading, 2.0)
                 } else {
-                    
-                    
                     
                     VStack {
                         
@@ -164,8 +106,6 @@ struct SnippetView: View {
                             }
                             
                             print(self.favorites.getTaskIds())
-                            
-                            //isFavourite.toggle()
                             
                         }, label: {
                             Image("StarIcon").renderingMode(.template).foregroundColor(self.favorites.contains(snippet) ? .yellow : .gray)
