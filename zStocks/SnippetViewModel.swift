@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 import Combine
+import DataCache
+//import SwiftlyCache
+
+
+
 
 struct Snippet: Hashable, Codable, Identifiable {
     //var id: Int
@@ -53,7 +58,6 @@ class SnippetViewModel: ObservableObject {
     @Published var isLoading = false
     @ObservedObject var favorites = Favorites()
     @ObservedObject var monitor = NetworkMonitor()
-    
     
     private var trendingResponse: [TrendingResponse] = []
     private var searchResponse: [SearchResponse] = []
@@ -146,9 +150,10 @@ class SnippetViewModel: ObservableObject {
                 .replaceError(with: [])
                 .eraseToAnyPublisher()
                 .receive(on: RunLoop.main)
-                .assign(to: \SnippetViewModel.trendingSnippets, on: self)
-            
-            
+                .sink(receiveValue: { value in
+                    self.trendingSnippets = value
+                    //DataCache.instance.write(array: self.trendingSnippets, forKey: "trendingSnippets")
+                })
             
         }
     }
@@ -223,6 +228,8 @@ class SnippetViewModel: ObservableObject {
             
         } else {
             
+            //snippets = DataCache.instance.readArray(forKey: "trendingSnippets") as! [Snippet]
+            
             trendingSnippets = load("trendingSnippetData.json")
             
             func load<T: Decodable>(_ filename: String) -> T {
@@ -268,9 +275,14 @@ class SnippetViewModel: ObservableObject {
                 .replaceError(with: [])
                 .eraseToAnyPublisher()
                 .receive(on: RunLoop.main)
-                .assign(to: \SnippetViewModel.snippets, on: self)
+                .sink(receiveValue: { value in
+                    self.snippets = value
+                    //DataCache.instance.write(array: self.snippets, forKey: "editorsPickSnippets")
+                })
             
         } else {
+            
+            //snippets = DataCache.instance.readArray(forKey: "editorsPickSnippets") as! [Snippet]
             
             snippets = load("snippetData.json")
             
@@ -301,8 +313,5 @@ class SnippetViewModel: ObservableObject {
     }
     
 }
-
-
-
 
 

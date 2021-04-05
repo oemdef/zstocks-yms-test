@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/AppPear/ChartView",
+        "state": {
+          "branch": "master",
+          "revision": "9115a992c91fa19cbb4f2241084240d38654a1fc",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftUIX",
+        "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
+        "state": {
+          "branch": "master",
+          "revision": "b42afebd4a0966e69d99c9fd8521ab8ade45157a",
+          "version": null
+        }
+      },
+      {
+        "package": "URLImage",
+        "repositoryURL": "https://github.com/dmytro-anokhin/url-image",
+        "state": {
+          "branch": "main",
+          "revision": "c1a906515b0a440927b96204b778058871b22f23",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

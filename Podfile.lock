@@ -1,0 +1,16 @@
+PODS:
+  - DataCache (1.5)
+
+DEPENDENCIES:
+  - DataCache
+
+SPEC REPOS:
+  trunk:
+    - DataCache
+
+SPEC CHECKSUMS:
+  DataCache: 8099e01aa35c2fd30f3410aae14ef5a130f6524b
+
+PODFILE CHECKSUM: a50d047fe0e4a73c8a999e2525c515a75d47bf07
+
+COCOAPODS: 1.10.1

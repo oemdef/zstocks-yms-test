@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A74B0B456B99B1027EE8951 /* Pods_zStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */; };
 		751B09BF26113F43009C40B2 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09BE26113F43009C40B2 /* SearchResultsView.swift */; };
-		751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 751B09C12611DD3E009C40B2 /* SwiftUICharts */; };
+		751B09C22611DD3E009C40B2 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 751B09C12611DD3E009C40B2 /* SwiftPackageProductDependency */; };
 		751B09C42611DE8B009C40B2 /* CardViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */; };
 		751B09C62611E159009C40B2 /* testGraphData.json in Resources */ = {isa = PBXBuildFile; fileRef = 751B09C52611E159009C40B2 /* testGraphData.json */; };
 		751B09CA2611EDCA009C40B2 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B09C92611EDCA009C40B2 /* CustomScrollView.swift */; };
@@ -20,7 +19,7 @@
 		7541C0CE25E1440200DA55C4 /* zStocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541C0CD25E1440200DA55C4 /* zStocksApp.swift */; };
 		7541C0D225E1440400DA55C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7541C0D125E1440400DA55C4 /* Assets.xcassets */; };
 		7541C0D525E1440400DA55C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7541C0D425E1440400DA55C4 /* Preview Assets.xcassets */; };
-		7567BD7C260FB515006FE71E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7567BD7B260FB515006FE71E /* URLImage */; };
+		7567BD7C260FB515006FE71E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 7567BD7B260FB515006FE71E /* SwiftPackageProductDependency */; };
 		7567BD7E260FEF9D006FE71E /* trendingSnippetData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7567BD7D260FEF9D006FE71E /* trendingSnippetData.json */; };
 		759E800325E43A70001B28E0 /* SearchViewLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E800225E43A70001B28E0 /* SearchViewLanding.swift */; };
 		759E800725E542F5001B28E0 /* SnippetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E800625E542F5001B28E0 /* SnippetViewModel.swift */; };
@@ -32,12 +31,11 @@
 		75DF0EEE25F2197900CFEB32 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EED25F2197900CFEB32 /* CardView.swift */; };
 		75DF0EF025F2B16400CFEB32 /* NewStocksHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */; };
 		75DF0EF225F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */; };
-		75DF0EF525F359BC00CFEB32 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 75DF0EF425F359BC00CFEB32 /* SwiftUIX */; };
+		75DF0EF525F359BC00CFEB32 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 75DF0EF425F359BC00CFEB32 /* SwiftPackageProductDependency */; };
+		E828D497DD0AE7DE72CB254F /* Pods_zStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8906A20EB381F5CC8CAD2A23 /* Pods_zStocks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zStocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.release.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.release.xcconfig"; sourceTree = "<group>"; };
 		751B09BE26113F43009C40B2 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		751B09C32611DE8B009C40B2 /* CardViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewNavigation.swift; sourceTree = "<group>"; };
 		751B09C52611E159009C40B2 /* testGraphData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testGraphData.json; sourceTree = "<group>"; };
@@ -62,7 +60,9 @@
 		75DF0EED25F2197900CFEB32 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		75DF0EEF25F2B16300CFEB32 /* NewStocksHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStocksHomeView.swift; sourceTree = "<group>"; };
 		75DF0EF125F2B1FF00CFEB32 /* NewHomeScreenNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeScreenNaviView.swift; sourceTree = "<group>"; };
-		D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.debug.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.debug.xcconfig"; sourceTree = "<group>"; };
+		8906A20EB381F5CC8CAD2A23 /* Pods_zStocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zStocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46A77CEFFA40ACAC249078B /* Pods-zStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.release.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.release.xcconfig"; sourceTree = "<group>"; };
+		EC4B6CF2B0F1F77402F2F333 /* Pods-zStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zStocks.debug.xcconfig"; path = "Target Support Files/Pods-zStocks/Pods-zStocks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,21 +70,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751B09C22611DD3E009C40B2 /* SwiftUICharts in Frameworks */,
-				7567BD7C260FB515006FE71E /* URLImage in Frameworks */,
-				75DF0EF525F359BC00CFEB32 /* SwiftUIX in Frameworks */,
-				2A74B0B456B99B1027EE8951 /* Pods_zStocks.framework in Frameworks */,
+				751B09C22611DD3E009C40B2 /* BuildFile in Frameworks */,
+				7567BD7C260FB515006FE71E /* BuildFile in Frameworks */,
+				75DF0EF525F359BC00CFEB32 /* BuildFile in Frameworks */,
+				E828D497DD0AE7DE72CB254F /* Pods_zStocks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47DF68F93AFE8189FDA13655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8906A20EB381F5CC8CAD2A23 /* Pods_zStocks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A2E00485A257E6F8E72E7E9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */,
-				71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */,
+				EC4B6CF2B0F1F77402F2F333 /* Pods-zStocks.debug.xcconfig */,
+				B46A77CEFFA40ACAC249078B /* Pods-zStocks.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -104,7 +112,7 @@
 				7541C0CC25E1440200DA55C4 /* zStocks */,
 				7541C0CB25E1440200DA55C4 /* Products */,
 				4A2E00485A257E6F8E72E7E9 /* Pods */,
-				76BE357C881F066CCD7DAE27 /* Frameworks */,
+				47DF68F93AFE8189FDA13655 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,14 +161,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		76BE357C881F066CCD7DAE27 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				63D65B55DAB57E1C0F48A426 /* Pods_zStocks.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,11 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7541C0D925E1440400DA55C4 /* Build configuration list for PBXNativeTarget "zStocks" */;
 			buildPhases = (
-				E0584DE9558C963379179DE6 /* [CP] Check Pods Manifest.lock */,
+				C2A57513084249FDD40C28B1 /* [CP] Check Pods Manifest.lock */,
 				7541C0C625E1440200DA55C4 /* Sources */,
 				7541C0C725E1440200DA55C4 /* Frameworks */,
 				7541C0C825E1440200DA55C4 /* Resources */,
-				444AC29D8263B38B62752095 /* [CP] Embed Pods Frameworks */,
+				159D7C656644472F3FD2ED68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,9 +180,9 @@
 			);
 			name = zStocks;
 			packageProductDependencies = (
-				75DF0EF425F359BC00CFEB32 /* SwiftUIX */,
-				7567BD7B260FB515006FE71E /* URLImage */,
-				751B09C12611DD3E009C40B2 /* SwiftUICharts */,
+				75DF0EF425F359BC00CFEB32 /* SwiftPackageProductDependency */,
+				7567BD7B260FB515006FE71E /* SwiftPackageProductDependency */,
+				751B09C12611DD3E009C40B2 /* SwiftPackageProductDependency */,
 			);
 			productName = zStocks;
 			productReference = 7541C0CA25E1440200DA55C4 /* zStocks.app */;
@@ -212,9 +212,9 @@
 			);
 			mainGroup = 7541C0C125E1440200DA55C4;
 			packageReferences = (
-				75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
-				7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */,
-				751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */,
+				75DF0EF325F359BB00CFEB32 /* RemoteSwiftPackageReference */,
+				7567BD7A260FB515006FE71E /* RemoteSwiftPackageReference */,
+				751B09C02611DD3E009C40B2 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 7541C0CB25E1440200DA55C4 /* Products */;
 			projectDirPath = "";
@@ -243,7 +243,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		444AC29D8263B38B62752095 /* [CP] Embed Pods Frameworks */ = {
+		159D7C656644472F3FD2ED68 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,7 +260,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zStocks/Pods-zStocks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0584DE9558C963379179DE6 /* [CP] Check Pods Manifest.lock */ = {
+		C2A57513084249FDD40C28B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,7 +428,7 @@
 		};
 		7541C0DA25E1440400DA55C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D22AE0391F99FECAA9FAB065 /* Pods-zStocks.debug.xcconfig */;
+			baseConfigurationReference = EC4B6CF2B0F1F77402F2F333 /* Pods-zStocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,7 +451,7 @@
 		};
 		7541C0DB25E1440400DA55C4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71D0687401A1D69167056390 /* Pods-zStocks.release.xcconfig */;
+			baseConfigurationReference = B46A77CEFFA40ACAC249078B /* Pods-zStocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,7 +496,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		751B09C02611DD3E009C40B2 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -504,7 +504,7 @@
 				kind = branch;
 			};
 		};
-		7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */ = {
+		7567BD7A260FB515006FE71E /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
@@ -512,7 +512,7 @@
 				kind = branch;
 			};
 		};
-		75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+		75DF0EF325F359BB00CFEB32 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -523,19 +523,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		751B09C12611DD3E009C40B2 /* SwiftUICharts */ = {
+		751B09C12611DD3E009C40B2 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 751B09C02611DD3E009C40B2 /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = 751B09C02611DD3E009C40B2 /* RemoteSwiftPackageReference */;
 			productName = SwiftUICharts;
 		};
-		7567BD7B260FB515006FE71E /* URLImage */ = {
+		7567BD7B260FB515006FE71E /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7567BD7A260FB515006FE71E /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 7567BD7A260FB515006FE71E /* RemoteSwiftPackageReference */;
 			productName = URLImage;
 		};
-		75DF0EF425F359BC00CFEB32 /* SwiftUIX */ = {
+		75DF0EF425F359BC00CFEB32 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75DF0EF325F359BB00CFEB32 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			package = 75DF0EF325F359BB00CFEB32 /* RemoteSwiftPackageReference */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */
